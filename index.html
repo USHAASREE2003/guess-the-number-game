@@ -1,0 +1,33 @@
+<h1>GUESS THE NUMBER!!!</h1>
+
+<input id="num" />
+<button onclick="check()">Check</button>
+<p id="res">Your guess is :</p>
+<p id="score">Score : 10</p>
+<button onclick="play()">PLAY AGAIN!</button>
+
+<script>
+  var num = document.getElementById("num");
+  var res = document.getElementById("res");
+  var score = document.getElementById("score");
+
+  var tscore = 10;
+
+  play();
+
+  function check() {
+    if (random == num.value) {
+      res.textContent = "Your guess is :" + " Right";
+      alert("You Won !!! " + "Your score :" + tscore);
+    } else {
+      tscore--;
+      score.textContent = "Score : " + tscore;
+      res.textContent = "Your guess is :" + " Wrong";
+    }
+  }
+
+  function play() {
+    random = Math.floor(Math.random() * 10) + 1;
+    console.log(random);
+  }
+</script>
